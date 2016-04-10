@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- CSS  Plain and Simple by christopher robinson http://www.edg3.co.uk/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<html>
+<head>
+ <title>Intel Galileo Garage Monitor</title>
+ <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+<body>
+ <div id="header">
+	<h1>Garage Monitor</h1>
+	<h2>power by Intel Galileo</h2>
+ </div>
+
+ <div id="navigation">
+  <ul>
+   <li><a href="/tmp">Check Temperature </a></li>
+   <li><a href="/admin">Enter Admin Page </a></li>
+   <li><a href="/">Home Page </a></li>
+  </ul>
+ </div>
+  
+  <div id="content">
+  <h1>Door Status</h1>
+   <p>
+  {% if bodyText%}
+   {{ bodyText }}
+ {% endif %}
+  <p>
+ </div>
+
+    <br> <br>  <br> <br> <br><br><br>
+  <div id="footer">
+  <p>
+    Garage Monitor Copyright &copy; 2016  Joe McManus |
+     josephmc@alumni.cmu.edu  <br>
+    CSS Copyright &copy; <a href="#">Plain and Simple</a> 2007 | 
+    Designed by <a href="http://www.edg3.co.uk/">edg3.co.uk</a> 
+  </p>
+  </div>
+</body>
+</html>

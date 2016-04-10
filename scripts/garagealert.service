@@ -1,0 +1,13 @@
+[Unit]
+Description=Garage Monitor Alet App
+
+[Service]
+PIDFile=/var/run/door.pid
+WorkingDirectory=/home/root
+ExecStart=/usr/bin/python door.py --pid
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=basic.target
+

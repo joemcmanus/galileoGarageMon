@@ -1,0 +1,11 @@
+[Unit]
+Description=Garage Monitor Flask App
+[Service]
+PIDFile=/var/run/flask.pid
+WorkingDirectory=/data/flask
+ExecStart=/usr/bin/gunicorn --bind 0.0.0.0:80  server:app -p /var/run/flask.pid
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=basic.target
